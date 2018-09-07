@@ -250,10 +250,10 @@
 			}
 			
 			function submitAction(){
-//				if (dicCount(dic) != 30) {
-//					alertMsg("还未完成全部测试！");
-//					return;
-//				}
+				if (dicCount(dic) != 30) {
+					alertMsg("还未完成全部测试！");
+					return;
+				}
 				localStorage.setItem('result', JSON.stringify(dic));
 				top.location = "result.html"
 			}
