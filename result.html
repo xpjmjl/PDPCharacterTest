@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script language="javascript" src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			
+			window.onload = function () {
+				var query = getQueryString("result");
+				$.getJSON("result.txt",function (data) {
+					$("#result_content").text(data[query])
+				});
+			}
+			
+			function getQueryString(name) { 
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if (r != null) return unescape(r[2]); return null;
+			}
+			
+		</script>
+		<style type="text/css">
+			#result_content {
+				margin: 0 auto;
+				padding: 5% 5%;
+				white-space: pre-wrap;
+				word-wrap: break-word;
+				font-size: 15px;
+				line-height: 40px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<pre id="result_content">
+			
+		</pre>
+	</body>
+</html>
